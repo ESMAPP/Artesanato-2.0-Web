@@ -11,42 +11,15 @@
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 151.03 134.76"
           >
-            <polygon
-              class="cls-1"
-              points="18.79 28.62 40.77 15.16 62.01 59.11 18.79 28.62"
-            />
-            <polygon
-              class="cls-2"
-              points="8.76 119.45 0 88.78 60.84 74.26 8.76 119.45"
-            />
-            <polygon
-              class="cls-1"
-              points="138.48 47.46 151.03 74.26 84 62.74 138.48 47.46"
-            />
-            <polygon
-              class="cls-3"
-              points="67.79 0 95.88 1.05 69.83 44.68 67.79 0"
-            />
-            <polygon
-              class="cls-3"
-              points="109 129.59 85.11 134.76 76.58 77.1 109 129.59"
-            />
-            <polygon
-              class="cls-2"
-              points="122.6 16.77 121.63 33.21 97.32 37.13 122.6 16.77"
-            />
-            <polygon
-              class="cls-1"
-              points="60.84 120.28 56.54 106.63 67.22 85.3 60.84 120.28"
-            />
-            <polygon
-              class="cls-2"
-              points="97.32 78.09 105.68 101.83 75.33 61.8 97.32 78.09"
-            />
-            <polygon
-              class="cls-3"
-              points="19.66 50.49 12.87 68.82 50.48 65.65 19.66 50.49"
-            />
+            <polygon class="cls-1" points="18.79 28.62 40.77 15.16 62.01 59.11 18.79 28.62" />
+            <polygon class="cls-2" points="8.76 119.45 0 88.78 60.84 74.26 8.76 119.45" />
+            <polygon class="cls-1" points="138.48 47.46 151.03 74.26 84 62.74 138.48 47.46" />
+            <polygon class="cls-3" points="67.79 0 95.88 1.05 69.83 44.68 67.79 0" />
+            <polygon class="cls-3" points="109 129.59 85.11 134.76 76.58 77.1 109 129.59" />
+            <polygon class="cls-2" points="122.6 16.77 121.63 33.21 97.32 37.13 122.6 16.77" />
+            <polygon class="cls-1" points="60.84 120.28 56.54 106.63 67.22 85.3 60.84 120.28" />
+            <polygon class="cls-2" points="97.32 78.09 105.68 101.83 75.33 61.8 97.32 78.09" />
+            <polygon class="cls-3" points="19.66 50.49 12.87 68.82 50.48 65.65 19.66 50.49" />
           </svg>
         </a>
       </li>
@@ -64,31 +37,13 @@
             stroke-linejoin="round"
             class="feather feather-grid"
           >
-            <rect class="icon-primary" x="3" y="3" width="7" height="7"></rect>
-            <rect
-              class="icon-secondary"
-              x="14"
-              y="3"
-              width="7"
-              height="7"
-            ></rect>
-            <rect
-              class="icon-secondary"
-              x="14"
-              y="14"
-              width="7"
-              height="7"
-            ></rect>
-            <rect
-              class="icon-secondary"
-              x="3"
-              y="14"
-              width="7"
-              height="7"
-            ></rect>
+            <rect class="icon-primary" x="3" y="3" width="7" height="7" />
+            <rect class="icon-secondary" x="14" y="3" width="7" height="7" />
+            <rect class="icon-secondary" x="14" y="14" width="7" height="7" />
+            <rect class="icon-secondary" x="3" y="14" width="7" height="7" />
           </svg>
-          <span class="link-text">Menu</span></router-link
-        >
+          <span class="link-text">Menu</span>
+        </router-link>
       </li>
       <li class="nav-item">
         <router-link to="/users" tag="a" class="nav-link">
@@ -104,18 +59,13 @@
             stroke-linejoin="round"
             class="feather feather-users"
           >
-            <path
-              class="icon-primary"
-              d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-            ></path>
-            <circle class="icon-primary" cx="9" cy="7" r="4"></circle>
-            <path class="icon-secondary" d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path
-              class="icon-secondary"
-              d="M16 3.13a4 4 0 0 1 0 7.75"
-            ></path></svg
-          ><span class="link-text">Utilizadores</span></router-link
-        >
+            <path class="icon-primary" d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle class="icon-primary" cx="9" cy="7" r="4" />
+            <path class="icon-secondary" d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path class="icon-secondary" d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          <span class="link-text">Utilizadores</span>
+        </router-link>
       </li>
       <li class="nav-item">
         <router-link to="/events" tag="a" class="nav-link">
@@ -131,28 +81,17 @@
             stroke-linejoin="round"
             class="feather feather-calendar"
           >
-            <rect
-              class="icon-primary"
-              x="3"
-              y="4"
-              width="18"
-              height="18"
-              rx="2"
-              ry="2"
-            ></rect>
-            <line class="icon-secondary" x1="16" y1="2" x2="16" y2="6"></line>
-            <line class="icon-secondary" x1="8" y1="2" x2="8" y2="6"></line>
-            <line class="icon-secondary" x1="3" y1="10" x2="21" y2="10"></line>
+            <rect class="icon-primary" x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <line class="icon-secondary" x1="16" y1="2" x2="16" y2="6" />
+            <line class="icon-secondary" x1="8" y1="2" x2="8" y2="6" />
+            <line class="icon-secondary" x1="3" y1="10" x2="21" y2="10" />
           </svg>
-          <span class="link-text">Eventos</span></router-link
-        >
+          <span class="link-text">Eventos</span>
+        </router-link>
       </li>
       <li class="nav-item">
-        <a
-          v-if="isUserLoggedIn && networkOnLine"
-          class="nav-link"
-          @click="logout"
-          ><svg
+        <a v-if="isUserLoggedIn && networkOnLine" class="nav-link" @click="logout">
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -164,23 +103,12 @@
             stroke-linejoin="round"
             class="feather feather-log-out"
           >
-            <path
-              class="icon-primary"
-              d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"
-            ></path>
-            <polyline
-              class="icon-secondary"
-              points="16 17 21 12 16 7"
-            ></polyline>
-            <line
-              class="icon-secondary"
-              x1="21"
-              y1="12"
-              x2="9"
-              y2="12"
-            ></line></svg
-          ><span class="link-text">Sair</span></a
-        >
+            <path class="icon-primary" d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <polyline class="icon-secondary" points="16 17 21 12 16 7" />
+            <line class="icon-secondary" x1="21" y1="12" x2="9" y2="12" />
+          </svg>
+          <span class="link-text">Sair</span>
+        </a>
       </li>
     </ul>
   </nav>
@@ -265,7 +193,7 @@ export default {
 
 .icon-primary {
   color: var(--color-primary);
-  opacity: 50%;
+  opacity: 0.7;
 }
 
 .icon-secondary {
