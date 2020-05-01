@@ -1,6 +1,55 @@
 <template>
   <nav class="navbar">
     <ul class="navbar-nav">
+      <li class="logo">
+        <a href="#" class="nav-link">
+          <span class="link-text logo-text">Artesanato</span>
+          <svg
+            id="Layer_1"
+            class="logo-icon"
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 151.03 134.76"
+          >
+            <polygon
+              class="cls-1"
+              points="18.79 28.62 40.77 15.16 62.01 59.11 18.79 28.62"
+            />
+            <polygon
+              class="cls-2"
+              points="8.76 119.45 0 88.78 60.84 74.26 8.76 119.45"
+            />
+            <polygon
+              class="cls-1"
+              points="138.48 47.46 151.03 74.26 84 62.74 138.48 47.46"
+            />
+            <polygon
+              class="cls-3"
+              points="67.79 0 95.88 1.05 69.83 44.68 67.79 0"
+            />
+            <polygon
+              class="cls-3"
+              points="109 129.59 85.11 134.76 76.58 77.1 109 129.59"
+            />
+            <polygon
+              class="cls-2"
+              points="122.6 16.77 121.63 33.21 97.32 37.13 122.6 16.77"
+            />
+            <polygon
+              class="cls-1"
+              points="60.84 120.28 56.54 106.63 67.22 85.3 60.84 120.28"
+            />
+            <polygon
+              class="cls-2"
+              points="97.32 78.09 105.68 101.83 75.33 61.8 97.32 78.09"
+            />
+            <polygon
+              class="cls-3"
+              points="19.66 50.49 12.87 68.82 50.48 65.65 19.66 50.49"
+            />
+          </svg>
+        </a>
+      </li>
       <li class="nav-item">
         <router-link to="/products" tag="a" class="nav-link">
           <svg
@@ -234,8 +283,7 @@ export default {
   margin-bottom: 1rem;
   text-align: center;
   color: var(--text-secondary);
-  background: var(--bg-secondary);
-  font-size: 1.5rem;
+  font-size: 1rem;
   letter-spacing: 0.3ch;
   width: 100%;
 }
@@ -253,7 +301,7 @@ export default {
 }
 
 .navbar:hover .logo svg {
-  transform: rotate(-180deg);
+  transform: rotate(-360deg);
 }
 
 /* Large screens */
@@ -281,25 +329,14 @@ export default {
   }
 }
 
-.dark {
-  --text-primary: #b6b6b6;
-  --text-secondary: #ececec;
-  --bg-primary: #23232e;
-  --bg-secondary: #141418;
+.cls-1 {
+  fill: #1775c1;
 }
-
-.light {
-  --text-primary: #1f1f1f;
-  --text-secondary: #000000;
-  --bg-primary: #ffffff;
-  --bg-secondary: #e4e4e4;
+.cls-2 {
+  fill: #f64;
 }
-
-.solar {
-  --text-primary: #576e75;
-  --text-secondary: #35535c;
-  --bg-primary: #fdf6e3;
-  --bg-secondary: #f5e5b8;
+.cls-3 {
+  fill: #ffaf3f;
 }
 
 /* Small screens */
