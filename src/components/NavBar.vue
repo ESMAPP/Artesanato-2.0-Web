@@ -1,43 +1,151 @@
 <template>
-  <header class="navbar" :class="{ offline: !networkOnLine }">
-    <router-link to="/home">
-      <img alt="logo-bento" class="logo" src="@/assets/img/bento-starter.svg" />
-      <span class="site-name title-desktop">{{ appTitle }}</span>
-      <span class="site-name title-mobile">{{ appShortTitle }}</span>
-    </router-link>
-    <div class="links">
-      <nav class="nav-links">
-        <div class="nav-item">
-          <router-link to="/products">Products</router-link>
-        </div>
-        <div v-if="!isUserLoggedIn && networkOnLine" class="nav-item">
-          <router-link to="/login">Login</router-link>
-        </div>
-        <div
-          v-if="isUserLoggedIn && networkOnLine"
-          class="nav-item logout-item"
-          @click="logout"
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <router-link to="/products" tag="a" class="nav-link">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-grid"
+          >
+            <rect class="icon-primary" x="3" y="3" width="7" height="7"></rect>
+            <rect
+              class="icon-secondary"
+              x="14"
+              y="3"
+              width="7"
+              height="7"
+            ></rect>
+            <rect
+              class="icon-secondary"
+              x="14"
+              y="14"
+              width="7"
+              height="7"
+            ></rect>
+            <rect
+              class="icon-secondary"
+              x="3"
+              y="14"
+              width="7"
+              height="7"
+            ></rect>
+          </svg>
+          <span class="link-text">Menu</span></router-link
         >
-          <a>Logout</a>
-        </div>
-        <div v-if="!networkOnLine" class="nav-item offline-label">Offline</div>
-      </nav>
-
-      <img
-        v-if="isUserLoggedIn && networkOnLine"
-        class="user-picture can-hide"
-        :src="user.photoURL"
-        alt="Avatar"
-      />
-    </div>
-  </header>
+      </li>
+      <li class="nav-item">
+        <router-link to="/users" tag="a" class="nav-link">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-users"
+          >
+            <path
+              class="icon-primary"
+              d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+            ></path>
+            <circle class="icon-primary" cx="9" cy="7" r="4"></circle>
+            <path class="icon-secondary" d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path
+              class="icon-secondary"
+              d="M16 3.13a4 4 0 0 1 0 7.75"
+            ></path></svg
+          ><span class="link-text">Utilizadores</span></router-link
+        >
+      </li>
+      <li class="nav-item">
+        <router-link to="/events" tag="a" class="nav-link">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-calendar"
+          >
+            <rect
+              class="icon-primary"
+              x="3"
+              y="4"
+              width="18"
+              height="18"
+              rx="2"
+              ry="2"
+            ></rect>
+            <line class="icon-secondary" x1="16" y1="2" x2="16" y2="6"></line>
+            <line class="icon-secondary" x1="8" y1="2" x2="8" y2="6"></line>
+            <line class="icon-secondary" x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span class="link-text">Eventos</span></router-link
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          v-if="isUserLoggedIn && networkOnLine"
+          class="nav-link"
+          @click="logout"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-log-out"
+          >
+            <path
+              class="icon-primary"
+              d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"
+            ></path>
+            <polyline
+              class="icon-secondary"
+              points="16 17 21 12 16 7"
+            ></polyline>
+            <line
+              class="icon-secondary"
+              x1="21"
+              y1="12"
+              x2="9"
+              y2="12"
+            ></line></svg
+          ><span class="link-text">Sair</span></a
+        >
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>
 import firebase from 'firebase/app'
 import { mapGetters, mapState } from 'vuex'
 
+const asset = require('@/assets/LogoIcon_vf.svg')
+
 export default {
+  components: {},
+  data: () => ({ asset, fit: 'contain' }),
   computed: {
     ...mapGetters('authentication', ['isUserLoggedIn']),
     ...mapState('authentication', ['user']),
@@ -52,136 +160,166 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/theme/variables.scss';
-
 .navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 20;
-  right: 0;
-  height: $navbar-height;
-  background-color: $navbar-color;
-  box-sizing: border-box;
-  border-bottom: 1px solid #eaecef;
-  padding: 0.7rem 1.5rem;
-  line-height: 2.2rem;
+  width: 5rem;
+  height: 100vh;
+  position: fixed;
+  background-color: #fff;
+  transition: width 600ms ease;
+}
 
-  a {
-    display: flex;
-    align-items: center;
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background: var(--bg-secondary);
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+.nav-link svg {
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.icon-primary {
+  color: var(--color-primary);
+  opacity: 50%;
+}
+
+.icon-secondary {
+  color: var(--color-primary);
+}
+
+.icon-primary,
+.icon-secondary {
+  transition: var(--transition-speed);
+}
+
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+}
+
+.logo svg {
+  transform: rotate(0deg);
+  transition: var(--transition-speed);
+}
+
+.logo-text {
+  display: inline;
+  position: absolute;
+  left: -999px;
+  transition: var(--transition-speed);
+}
+
+.navbar:hover .logo svg {
+  transform: rotate(-180deg);
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
   }
 
-  .title-desktop {
+  .navbar:hover {
+    width: 16rem;
+  }
+
+  .navbar:hover .link-text {
     display: inline;
   }
 
-  .title-mobile {
-    display: none;
+  .navbar:hover .logo svg {
+    margin-left: 11rem;
   }
 
-  @media (max-width: 500px) {
-    padding: 0.7rem 0.7rem;
-
-    .can-hide {
-      display: none;
-    }
-
-    .title-desktop {
-      display: none;
-    }
-
-    .title-mobile {
-      display: block;
-    }
+  .navbar:hover .logo-text {
+    left: 0px;
   }
+}
 
-  .site-name {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #2c3e50;
-    position: relative;
+.dark {
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+}
+
+.light {
+  --text-primary: #1f1f1f;
+  --text-secondary: #000000;
+  --bg-primary: #ffffff;
+  --bg-secondary: #e4e4e4;
+}
+
+.solar {
+  --text-primary: #576e75;
+  --text-secondary: #35535c;
+  --bg-primary: #fdf6e3;
+  --bg-secondary: #f5e5b8;
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
   }
 
   .logo {
-    height: 24px;
-    padding-right: 8px;
+    display: none;
   }
 
-  .links {
-    padding-left: 1.5rem;
-    box-sizing: border-box;
-    white-space: nowrap;
-    font-size: 0.9rem;
-    position: absolute;
-    right: 1.5rem;
-    top: 0.7rem;
-    display: flex;
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      .nav-item {
-        position: relative;
-        display: inline-block;
-        margin-left: 1.5rem;
-        line-height: 2.2rem;
-
-        &:first-child {
-          margin-left: 0;
-        }
-
-        a {
-          font-weight: 500;
-          font-size: 0.9rem;
-          text-decoration: none;
-          color: $navbar-link-color;
-          border-color: #2c3e50;
-          line-height: 1.4rem;
-          display: inline-block;
-          cursor: pointer;
-        }
-
-        @mixin activatedLink() {
-          margin-bottom: -2px;
-          border-bottom: 2px solid $vue-color;
-        }
-
-        .router-link-active {
-          @include activatedLink;
-        }
-
-        @media (hover) {
-          :hover {
-            @include activatedLink;
-          }
-        }
-      }
-    }
+  .navbar-nav {
+    flex-direction: row;
   }
 
-  &.offline {
-    background: $navbar-offline-color;
-    .links .nav-links .nav-item a,
-    .site-name {
-      color: white;
-    }
-  }
-
-  .user-picture {
-    max-height: 32px;
-    margin-left: 1.5rem;
-    border-radius: 50%;
-  }
-
-  .offline-label {
-    padding: 0px 10px;
-    border: 1px solid white;
-    border-radius: 5px;
-    color: white;
-    margin-left: 1.5rem;
+  .nav-link {
+    justify-content: center;
   }
 }
 </style>

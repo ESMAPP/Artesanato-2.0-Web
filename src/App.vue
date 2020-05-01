@@ -4,29 +4,15 @@
     <div class="main-wrapper">
       <router-view />
     </div>
-
-    <new-content-available-toastr
-      v-if="newContentAvailable"
-      class="new-content-available-toastr"
-      :refreshing-app="refreshingApp"
-      @refresh="serviceWorkerSkipWaiting"
-    ></new-content-available-toastr>
-    <apple-add-to-home-screen-modal
-      v-if="showAddToHomeScreenModalForApple"
-      class="apple-add-to-home-screen-modal"
-      @close="closeAddToHomeScreenModalForApple(false)"
-    >
-    </apple-add-to-home-screen-modal>
   </div>
 </template>
+
 <script>
 import NavBar from '@/components/NavBar'
-import NewContentAvailableToastr from '@/components/NewContentAvailableToastr'
-import AppleAddToHomeScreenModal from '@/components/AppleAddToHomeScreenModal'
 import { mapState, mapActions, mapGetters } from 'vuex'
 
 export default {
-  components: { NavBar, NewContentAvailableToastr, AppleAddToHomeScreenModal },
+  components: { NavBar },
   computed: {
     ...mapGetters('app', ['newContentAvailable']),
     ...mapState('app', ['showAddToHomeScreenModalForApple', 'refreshingApp'])
@@ -39,53 +25,48 @@ export default {
 </script>
 
 <style lang="scss">
+:root {
+  font-size: 16px;
+  font-family: 'Roboto';
+  --color-primary: #1775c1;
+  --color-warning: #ffaf3f;
+  --color-danger: #f56c6c;
+  --color-success: #67c23a;
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #fafafa;
+  --bg-secondary: #f7f7f7;
+  --transition-speed: 600ms;
+}
+
 body {
+  color: black;
+  background-color: white;
   margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+}
 
-  a {
-    font-weight: 500;
-    text-decoration: none;
-  }
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
 
-  #app {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 16px;
-    color: #2c3e50;
+body::-webkit-scrollbar-track {
+  background: #111111;
+}
 
-    .new-content-available-toastr {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-    }
+body::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+}
 
-    .apple-add-to-home-screen-modal {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      top: 0;
-      left: 0;
-      height: fit-content;
-      width: fit-content;
-      margin: auto;
-      z-index: 1000;
-    }
+.main-wrapper {
+  margin-left: 5rem;
+  padding: 1rem;
+}
 
-    .main-wrapper {
-      margin-top: 3.6rem;
-      padding: 20px;
-
-      .page-wrapper {
-        width: 60%;
-        margin: auto;
-
-        @media screen and (max-width: 1000px) {
-          width: 100%;
-        }
-      }
-    }
+@media only screen and (max-width: 600px) {
+  .main-wrapper {
+    margin: 0;
   }
 }
 </style>
