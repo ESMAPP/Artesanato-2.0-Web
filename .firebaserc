@@ -1,5 +1,14 @@
 {
   "projects": {
     "dev": "esmapp-artesanato-2"
+  },
+  "targets": {
+    "cmvc-artesanato": {
+      "hosting": {
+        "cmvca": [
+          "cmvc-artesanato"
+        ]
+      }
+    }
   }
 }
